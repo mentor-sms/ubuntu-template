@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+	
+override_dh_auto_clean:
+	rm -fr $$(pwd)/build/debugrelease/*
+
+override_dh_auto_configure:
+	cmake -H$$(pwd)/src -B$$(pwd)/build/debugrelease -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_LIBDIR=mentor
+
+override_dh_auto_build:
+	cmake --build $$(pwd)/build/debugrelease --target all 
+	

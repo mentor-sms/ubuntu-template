@@ -1,0 +1,12 @@
+Source: pkgname
+Section: misc
+Priority: optional
+Maintainer: Szymon M. Sabat <capt_sms@protonmail.com>
+Build-Depends: debhelper (>= 13), debhelper-compat (= 13), mentorsmslib (= 1)
+Standards-Version: 4.6.0.1
+
+Package: pkgname
+Architecture: amd64
+Depends: mentorsmslib (= 1), ${shlibs:Depends}, ${misc:Depends}
+Description: Package Name
+ Package description
